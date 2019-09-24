@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style type="text/css">
+            <!--
+                body {
+	                background-color: black;
+	            }
+            -->
+        </style>
+
+        <script type="text/javascript">
+            function bgChange() {
+                var ind = document.getElementById("bgcolor").selectedIndex;
+                var val = document.getElementById("bgcolor")[ind].value;
+                var txt = document.getElementById("bgcolor")[ind].text;
+                document.body.style.backgroundColor = val;
+                console.log("あなたは背景色を"+txt+"色にしました");
+            }
+        </script>
+    </head>
+    <body>
+        背景の色を指定してください
+        <select id="bgcolor" onchange="bgChange()">
+            <option value="white">白</option>
+            <option value="red">赤</option>
+            <option value="blue">青</option>
+            <option value="green">緑</option>
+            <option value="yellow">黄</option>
+        </select>
+    </body>
+</html>
