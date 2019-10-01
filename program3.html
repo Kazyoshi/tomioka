@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function convertBinary()
+{
+    var hensu1 = document.getElementById("inputNum").value;
+    var kotae1 = '';
+    var minusFlag = false;
+
+    console.log("input = "+hensu1);
+
+    // ここから2進数変換をロジックがスタート
+    // 入力された0の場合は、2進数でも0なので答えが決まる
+    if (hensu1 == 0) {
+        document.getElementById("binary").innerHTML = "0";
+
+    // 0以外の数字が入力された場合
+    } else {
+        if (hensu1 < 0) {
+            hensu1 = hensu1 * -1;
+            minusFlag = true;
+        }
+        while (hensu1 >= 1) {
+            if ((hensu1%2 === 1) == true) {
+                kotae1 = "1" + kotae1;
+            } else {
+                kotae1 = "0" + kotae1;
+            }
+        
+            hensu1 = Math.floor(hensu1/2);
+            console.log("hensu1 = "+hensu1);
+        }
+
+        if (minusFlag == true) {
+            kotae1 = "-" + kotae1;
+        }
+        document.getElementById("binary").innerHTML = kotae1;
+    }
+}
+</script>
+
+<style type="text/css">
+#binary {
+    font-size: 20pt;
+    color: red;
+}
+</style>
+
+</head>
+<body>
+    <p>数字を入力してください。</p>
+    <p><input type="number" size="10" id="inputNum" value="0"> <input type="button" value="変換する" onclick="convertBinary();"></p>
+    <p>2進数で表すと <div id="binary"></div></p>
+</body>
+</html>
