@@ -1,17 +1,19 @@
-<!-- このファイル全体がHTMLです。-->
 <!DOCTYPE html>
-<html>
+<!-- このファイル全体がHTMLです。-->
+<html lang="ja">
 <head>
-
+<meta charset="utf-8">
 <!-- ここからJavascriptが書かれています -->
 <script type="text/javascript">
 function convertBinary()
 {
-    var hensu1 = document.getElementById("inputNum").value;
+    // 初期値を与えて変数を宣言している
     var kotae1 = '';
     var minusFlag = false;
 
-    console.log("input = "+hensu1);
+    // ここで入力した数字を変数へと代入している
+    var hensu1 = document.getElementById("inputNum").value;
+    console.log("input number = "+hensu1);
 
     if (hensu1 == 0) {
         document.getElementById("binary").innerHTML = "0";
@@ -24,12 +26,14 @@ function convertBinary()
         while (hensu1 >= 1) {
             if ((hensu1%2 === 1) == true) {
                 kotae1 = "1" + kotae1;
+                console.log("remainder = 1");
             } else {
                 kotae1 = "0" + kotae1;
+                console.log("remainder = 0");
             }
         
             hensu1 = Math.floor(hensu1/2);
-            console.log("hensu1 = "+hensu1);
+            console.log("input number changed to "+hensu1);
         }
 
         if (minusFlag == true) {
@@ -53,7 +57,8 @@ function convertBinary()
 </head>
 <body>
     <p>数字を入力してください。</p>
-    <p><input type="number" size="10" id="inputNum" value="0"> <input type="button" value="変換する" onclick="convertBinary();"></p>
-    <p>2進数で表すと <div id="binary"></div></p>
+    <p><input type="number" size="10" id="inputNum" value="0"></p>
+    <p><input type="button" value="2進数にすると？" onclick="convertBinary();"></p>
+    <div id="binary"></div>
 </body>
 </html>
