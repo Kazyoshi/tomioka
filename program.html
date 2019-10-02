@@ -1,6 +1,9 @@
+<!-- このファイル全体がHTMLです。-->
+<!DOCTYPE html>
 <html>
 <head>
 
+<!-- ここからJavascriptが書かれています -->
 <script type="text/javascript">
 function convertBinary()
 {
@@ -10,12 +13,9 @@ function convertBinary()
 
     console.log("input = "+hensu1);
 
-    // ここから2進数変換をロジックがスタート
-    // 入力された0の場合は、2進数でも0なので答えが決まる
     if (hensu1 == 0) {
         document.getElementById("binary").innerHTML = "0";
 
-    // 0以外の数字が入力された場合の計算をスタート
     } else {
         if (hensu1 < 0) {
             hensu1 = hensu1 * -1;
@@ -39,13 +39,16 @@ function convertBinary()
     }
 }
 </script>
+<!-- ここまでがJavascriptで書かれたプログラムです。 -->
 
+<!-- ここからCSSが書かれています。-->
 <style type="text/css">
 #binary {
     font-size: 20pt;
     color: red;
 }
 </style>
+<!-- ここまでがCSSで書かれたプログラムです -->
 
 </head>
 <body>
