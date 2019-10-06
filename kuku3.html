@@ -1,15 +1,9 @@
 <html>
 <head>
-  <!-- Javasrciptプログラム -->
+  <!-- Javascriptプログラム -->
   <script type="text/javascript">
-    function calKuku() {
-      console.log('関数を呼び出しました');
-
-      // 変数:掛け算の答えを入れる
-      var ans = 0;
-
-      // 変数:計算回数を入れる
-      var cnt = 0;
+    function runKuku() {
+      console.log('My Kuku program begins');
 
       // 掛け算の式を答えを作る処理部分
       for (i = 1; i <= 9; i++) {
@@ -21,23 +15,15 @@
 
           // HTMLページ内部に出力する
           document.getElementById("answer").insertAdjacentHTML('beforeend', '<div>'+i+' x '+j+' = '+ans+'</div>');
-
-          // 計算した回数を1回分増やす
-          cnt += 1;
-        }
+       }
       }
-
-      console.log('total calc='+cnt); // デバッグ用出力
-
-      // 計算した回数をHTMLページ内部に出力する
-      document.getElementById("answer").insertAdjacentHTML('beforeend', '<div id="total">全部で'+cnt+'回計算しました</div>');
     }
   </script>
 
   <!-- CSSプログラム -->
   <style type="text/css">
     h1 {
-      color: blue;
+      color: #02BAFA;
     }
   </style>
 </head>
@@ -46,13 +32,12 @@
 <body>
 
   <a href="https://raw.githubusercontent.com/Kazyoshi/tomioka/master/kuku1.html" target="_blank">ひな型プログラム</a>
-  <a href="https://raw.githubusercontent.com/Kazyoshi/tomioka/master/kuku2.html" target="_blank">スタイルシート定義を追加したプログラム</a>
-  <a href="https://raw.githubusercontent.com/Kazyoshi/tomioka/master/kuku3.html" target="_blank">Javascript部を追加したプログラム</a>
+  <a href="https://raw.githubusercontent.com/Kazyoshi/tomioka/master/kuku2.html" target="_blank">CSSを追加したプログラム</a>
   <a href="https://raw.githubusercontent.com/Kazyoshi/tomioka/master/kuku.html" target="_blank">完成版のプログラム</a>
   <hr size="1">
 
   <h1>九九計算プログラム</h1>
-  <input type="button" value="九九実行" onclick="calKuku();">
+  <input type="button" value="九九実行" onclick="runKuku();">
   <div id="answer"></div>
 
 </body>
